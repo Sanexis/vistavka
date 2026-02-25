@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline Swiper Showcase</title>
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="viewport">
+      <video class="viewport-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/video/Видео.mp4" type="video/mp4" />
+      </video>
+
+      <main class="stage" aria-label="Презентационный экран">
+        <video class="stage-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+          <source src="assets/video/Видео.mp4" type="video/mp4" />
+        </video>
+        <div class="stage-mask" aria-hidden="true"></div>
+
+        <section class="intro-screen" role="button" tabindex="0" aria-label="Открыть карточки">
+          <div class="intro-title">
+            <img class="intro-title__icon" src="assets/images/belarus.svg" alt="Символ Беларуси" />
+            <div class="intro-title__text">
+              <span class="intro-title__made">СДЕЛАНО</span>
+              <span class="intro-title__in-belarus">В БЕЛАРУСИ</span>
+            </div>
+          </div>
+          <p>Нажать, чтобы узнать подробнее</p>
+        </section>
+
+        <section class="cards-area" aria-label="Карточки">
+          <div class="swiper expo-swiper">
+            <div class="swiper-wrapper" id="slides-root"></div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+
+        <section class="contact-modal" id="contact-modal" aria-hidden="true">
+          <div class="contact-modal__backdrop" data-modal-close="contact"></div>
+          <div class="contact-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+            <button class="contact-modal__close" type="button" aria-label="Закрыть" data-modal-close="contact"></button>
+            <h3 class="contact-modal__title" id="contact-modal-title">Перейти в чат-бот поставщика</h3>
+            <div class="contact-modal__qr-grid">
+              <div class="contact-modal__qr-item">
+                <div class="contact-modal__qr-slot" aria-label="QR MAX">
+                  <img class="contact-modal__qr-image" src="assets/images/max.png" alt="QR MAX" />
+                </div>
+                <span class="contact-modal__qr-label">MAX</span>
+              </div>
+              <div class="contact-modal__divider" aria-hidden="true">
+                <span class="contact-modal__divider-mark"></span>
+              </div>
+              <div class="contact-modal__qr-item">
+                <div class="contact-modal__qr-slot" aria-label="QR Telegram">
+                  <img class="contact-modal__qr-image" src="assets/images/tg.png" alt="QR Telegram" />
+                </div>
+                <span class="contact-modal__qr-label">Telegram</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="age-modal" id="age-modal" aria-hidden="true">
+          <div class="age-modal__backdrop" data-modal-close="age"></div>
+          <div class="age-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="age-modal-title">
+            <h3 class="age-modal__title" id="age-modal-title">Требуется подтверждение возраста</h3>
+            <button class="age-modal__confirm" type="button" data-age-confirm>Мне есть 18</button>
+            <button class="age-modal__decline" type="button" data-age-decline>Мне нет 18</button>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

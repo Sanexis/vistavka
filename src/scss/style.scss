@@ -1015,6 +1015,18 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 
+  &.bot{
+    max-height: 78rem;
+
+    .call-button{
+      margin-top: 2rem!important;
+    }
+    img{
+      object-fit: contain!important;
+      background-color: white;
+    }
+  }
+
   &.ohota{
     max-height: 76.5rem;
 
@@ -1160,6 +1172,11 @@ body {
 }
 
 .card-detail--ohho .items-list .item {
+  min-height: rem(303);
+  height: auto;
+}
+
+.card-detail--gator .items-list .item {
   min-height: rem(303);
   height: auto;
 }

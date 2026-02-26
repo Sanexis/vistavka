@@ -759,23 +759,29 @@ function initIntro(swiper) {
   if (!intro) return;
 
   const IDLE_TIMEOUT_MS = 15000;
-  const IDLE_TIMEOUT_EXPANDED_MS = 60000;
+  const IDLE_TIMEOUT_EXPANDED_MS = 45000;
+  const IDLE_TIMEOUT_QR_MODAL_MS = 60000;
   let idleTimer = null;
-  let hasEnteredSwiper = false;
 
   const reveal = () => {
     document.body.classList.add("is-revealed");
-    hasEnteredSwiper = true;
   };
 
   const hide = () => {
-    const hasOpenModal = Boolean(
-      document.querySelector(".contact-modal.is-open, .age-modal.is-open"),
-    );
-    if (hasOpenModal) {
-      resetIdleTimer();
-      return;
+    const openContactModal = document.querySelector(".contact-modal.is-open");
+    const openAgeModal = document.querySelector(".age-modal.is-open");
+
+    if (openContactModal) {
+      openContactModal.classList.remove("is-open");
+      openContactModal.setAttribute("aria-hidden", "true");
     }
+
+    if (openAgeModal) {
+      openAgeModal.classList.remove("is-open");
+      openAgeModal.setAttribute("aria-hidden", "true");
+    }
+
+    syncModalBodyState();
 
     const expandedBackButtons = document.querySelectorAll(
       ".swiper-slide.is-slide-expanded .card-detail__back",
@@ -787,11 +793,7 @@ function initIntro(swiper) {
       }
     });
 
-    if (hasEnteredSwiper) {
-      document.body.classList.add("is-revealed");
-    } else {
-      document.body.classList.remove("is-revealed");
-    }
+    document.body.classList.remove("is-revealed");
 
     if (swiper) {
       swiper.slideTo(0, 0);
@@ -803,13 +805,10 @@ function initIntro(swiper) {
       clearTimeout(idleTimer);
     }
 
-    const hasOpenModal = Boolean(
-      document.querySelector(".contact-modal.is-open, .age-modal.is-open"),
+    const isContactModalOpen = Boolean(
+      document.querySelector(".contact-modal.is-open"),
     );
-    if (hasOpenModal) {
-      idleTimer = null;
-      return;
-    }
+    const isAgeModalOpen = Boolean(document.querySelector(".age-modal.is-open"));
 
     const hasExpandedSlide = Boolean(
       document.querySelector(
@@ -817,9 +816,12 @@ function initIntro(swiper) {
       ),
     );
 
-    const idleTimeout = hasExpandedSlide
-      ? IDLE_TIMEOUT_EXPANDED_MS
-      : IDLE_TIMEOUT_MS;
+    let idleTimeout = IDLE_TIMEOUT_MS;
+    if (isContactModalOpen) {
+      idleTimeout = IDLE_TIMEOUT_QR_MODAL_MS;
+    } else if (hasExpandedSlide || isAgeModalOpen) {
+      idleTimeout = IDLE_TIMEOUT_EXPANDED_MS;
+    }
 
     idleTimer = setTimeout(() => {
       hide();

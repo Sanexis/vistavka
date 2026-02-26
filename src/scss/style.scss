@@ -201,6 +201,24 @@ body {
   transition: transform 2s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 2s ease;
 }
 
+.intro-fullscreen-btn {
+  position: absolute;
+  right: rem(24);
+  bottom: rem(24);
+  z-index: 3;
+  min-width: rem(148);
+  height: rem(44);
+  padding: 0 rem(14);
+  border: rem(1) solid rgba(255, 255, 255, 0.56);
+  border-radius: rem(999);
+  background: rgba(6, 10, 8, 0.45);
+  color: #ffffff;
+  font-family: "Roboto", "Roboto Condensed", "Arial Narrow", sans-serif;
+  font-size: rem(20);
+  line-height: 1;
+  cursor: pointer;
+}
+
 .cards-area {
   position: relative;
   z-index: 1;

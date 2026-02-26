@@ -191,6 +191,24 @@ body {
   transition: transform 2s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 2s ease;
 }
 
+.intro-fullscreen-btn {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 3;
+  min-width: 9.25rem;
+  height: 2.75rem;
+  padding: 0 0.875rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.56);
+  border-radius: 62.4375rem;
+  background: rgba(6, 10, 8, 0.45);
+  color: #ffffff;
+  font-family: "Roboto", "Roboto Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
 .cards-area {
   position: relative;
   z-index: 1;
@@ -1138,5 +1156,3 @@ body {
 .card-detail--ohota {
   color: white;
 }
-
-/*# sourceMappingURL=style.css.map */

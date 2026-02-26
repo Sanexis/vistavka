@@ -29,6 +29,31 @@ function syncModalBodyState() {
   document.body.classList.toggle("is-contact-modal-open", hasOpenModal);
 }
 
+function openFullscreen(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  const button = event?.currentTarget;
+  if (button instanceof HTMLElement) {
+    button.style.display = "none";
+  }
+
+  const element = document.documentElement;
+
+  if (element.requestFullscreen) {
+    element.requestFullscreen({ navigationUI: "hide" }).catch(() => {});
+    return;
+  }
+
+  if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  }
+}
+
+window.openFullscreen = openFullscreen;
+
 const BROVAR_PRODUCTS_BY_CATEGORY = {
   beer: [
     {

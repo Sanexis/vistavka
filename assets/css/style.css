@@ -93,7 +93,6 @@ body {
   bottom: 1.625rem;
   z-index: 3;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   opacity: 0;
@@ -111,7 +110,7 @@ body {
 }
 
 .dev-mark__logo {
-  width: 18.75rem;
+  width: 13rem;
   height: auto;
   display: block;
 }
@@ -148,7 +147,7 @@ body {
 }
 
 .intro-title__icon {
-  width: 14.25rem;
+  width: 44rem;
   height: 14.25rem;
   display: block;
   object-fit: contain;
@@ -235,13 +234,13 @@ body {
 .contact-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(6, 9, 7, 0.76);
+  background: rgba(6, 9, 7, 0.9);
 }
 
 .contact-modal__dialog {
   position: relative;
-  width: 55rem;
-  height: 35rem;
+  width: 63rem;
+  height: 40rem;
   padding: 2.5rem 4rem 1.25rem;
   display: flex;
   flex-direction: column;
@@ -300,8 +299,8 @@ body {
 }
 
 .contact-modal__qr-slot {
-  width: 15rem;
-  height: 15rem;
+  width: 20rem;
+  height: 20rem;
   border: 0.125rem dashed rgba(28, 47, 33, 0.45);
   border-radius: 0.5rem;
   background: linear-gradient(45deg, rgba(31, 48, 35, 0.04) 25%, transparent 25%, transparent 75%, rgba(31, 48, 35, 0.04) 75%), linear-gradient(45deg, rgba(31, 48, 35, 0.04) 25%, transparent 25%, transparent 75%, rgba(31, 48, 35, 0.04) 75%);
@@ -524,6 +523,20 @@ body {
   margin: 3.25rem 0 3.375rem 0;
   width: 56%;
 }
+.card-logo.brovar-slide {
+  width: 13rem;
+  margin-top: 0;
+}
+.card-logo.ohho-slide {
+  margin: 9px auto;
+  width: 18%;
+}
+.card-logo.gator-slide {
+  width: 22rem;
+}
+.card-logo.maentak-slide {
+  width: 13rem;
+}
 .card-logo.gator {
   margin: 12.5rem 0 6.375rem 0;
   width: 100%;
@@ -733,24 +746,24 @@ body {
 
 .slide-corner-back {
   all: unset;
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 7rem;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: -0.625rem;
   transform: translateY(-50%);
   z-index: 8;
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.slide-corner-back::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: #ffffff;
-  -webkit-mask: url("../images/shevron.svg") center/contain no-repeat;
-  mask: url("../images/shevron.svg") center/contain no-repeat;
+.slide-corner-back__icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
   transform: scaleX(-1);
 }
 
@@ -768,11 +781,6 @@ body {
 
 .slide-corner-logo {
   display: none !important;
-}
-
-.swiper-slide[data-id="1"].is-slide-expanded .slide-corner-back::before,
-.swiper-slide[data-id="1"].is-slide-collapsing .slide-corner-back::before {
-  background-color: #00aa5b;
 }
 
 .swiper-pagination {
@@ -824,8 +832,10 @@ body {
 
 .swiper-slide.is-slide-expanded .feature-card-shell {
   --corner-cut: 7.375rem;
-  width: calc(98% - 3.75rem);
-  height: 95%;
+  width: 90%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .swiper-slide.is-slide-collapsing .feature-card-shell {
@@ -888,10 +898,10 @@ body {
 }
 .main-info .description {
   font-weight: 300;
-  font-size: 1.625rem;
+  font-size: 1.125rem;
   line-height: 100%;
   margin-top: 1.9375rem;
-  text-align: left;
+  text-align: justify;
 }
 
 .arnament-block {
@@ -921,7 +931,7 @@ body {
 }
 .triple-select .choice {
   max-width: 10rem;
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   color: white;
   width: 100%;
   cursor: pointer;
@@ -976,14 +986,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.125rem;
-  max-height: 59.0625rem;
+  max-height: 70rem;
   overflow-y: auto;
   padding-right: 1.5rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .items-list.bot {
-  max-height: 78rem;
+  max-height: 85rem;
 }
 .items-list.bot .call-button {
   margin-top: 2rem !important;
@@ -1004,7 +1014,7 @@ body {
   flex-shrink: 0;
 }
 .items-list.ohho {
-  max-height: 77rem;
+  max-height: 80rem;
 }
 .items-list.ohho .item {
   height: 20.8125rem !important;

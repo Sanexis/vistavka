@@ -6,6 +6,8 @@ const CONTENT_FADE_MS = 670;
 const CONTENT_FADE_CLOSE_MS = 335;
 const BUTTON_SOUND_SRC = "assets/sound/sound.mp3";
 const DETAIL_CORNER_LOGO_SRC = "assets/images/company-logo.svg";
+const SLIDE_BACK_CHEVRON_WHITE_SRC = "assets/images/shevron-white.svg";
+const SLIDE_BACK_CHEVRON_GREEN_SRC = "assets/images/shevron-green.svg";
 const SWIPER_SLIDES_PER_VIEW = 1.34;
 const SWIPER_SPACE_BETWEEN = 56;
 const SWIPER_COVERFLOW_ROTATE = 24;
@@ -654,12 +656,39 @@ function injectDetailCornerLogo(slide, id) {
 
 function ensureSlideCornerBack(slide) {
   if (!slide) return;
-  if (slide.querySelector(".slide-corner-back")) return;
+
+  const resolveChevronSrc = () =>
+    slide.dataset.id === "1"
+      ? SLIDE_BACK_CHEVRON_GREEN_SRC
+      : SLIDE_BACK_CHEVRON_WHITE_SRC;
+
+  const existing = slide.querySelector(".slide-corner-back");
+  if (existing) {
+    let existingIcon = existing.querySelector(".slide-corner-back__icon");
+    if (!existingIcon) {
+      existingIcon = document.createElement("img");
+      existingIcon.className = "slide-corner-back__icon";
+      existingIcon.alt = "";
+      existingIcon.setAttribute("aria-hidden", "true");
+      existing.append(existingIcon);
+    }
+
+    existingIcon.setAttribute("src", resolveChevronSrc());
+    return;
+  }
 
   const back = document.createElement("button");
   back.className = "slide-corner-back";
   back.type = "button";
   back.setAttribute("aria-label", "Назад");
+
+  const icon = document.createElement("img");
+  icon.className = "slide-corner-back__icon";
+  icon.src = resolveChevronSrc();
+  icon.alt = "";
+  icon.setAttribute("aria-hidden", "true");
+
+  back.append(icon);
   slide.append(back);
 }
 
@@ -740,6 +769,14 @@ function initIntro(swiper) {
   };
 
   const hide = () => {
+    const hasOpenModal = Boolean(
+      document.querySelector(".contact-modal.is-open, .age-modal.is-open"),
+    );
+    if (hasOpenModal) {
+      resetIdleTimer();
+      return;
+    }
+
     const expandedBackButtons = document.querySelectorAll(
       ".swiper-slide.is-slide-expanded .card-detail__back",
     );
@@ -764,6 +801,14 @@ function initIntro(swiper) {
   const resetIdleTimer = () => {
     if (idleTimer) {
       clearTimeout(idleTimer);
+    }
+
+    const hasOpenModal = Boolean(
+      document.querySelector(".contact-modal.is-open, .age-modal.is-open"),
+    );
+    if (hasOpenModal) {
+      idleTimer = null;
+      return;
     }
 
     const hasExpandedSlide = Boolean(

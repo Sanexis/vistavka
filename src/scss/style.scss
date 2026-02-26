@@ -103,7 +103,6 @@ body {
   bottom: rem(26);
   z-index: 3;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: rem(8);
   opacity: 0;
@@ -121,7 +120,7 @@ body {
 }
 
 .dev-mark__logo {
-  width: 18.75rem;
+  width: 13rem;
   height: auto;
   display: block;
 }
@@ -158,7 +157,7 @@ body {
 }
 
 .intro-title__icon {
-  width: rem(228);
+  width: 44rem;
   height: rem(228);
   display: block;
   object-fit: contain;
@@ -245,13 +244,13 @@ body {
 .contact-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(6, 9, 7, 0.76);
+  background: rgba(6, 9, 7, 0.9);
 }
 
 .contact-modal__dialog {
   position: relative;
-  width: 55rem;
-  height: 35rem;
+  width: 63rem;
+  height: 40rem;
   padding: rem(40) rem(64) rem(20);
   display: flex;
   flex-direction: column;
@@ -314,8 +313,8 @@ body {
 }
 
 .contact-modal__qr-slot {
-  width: rem(240);
-  height: rem(240);
+  width: 20rem;
+  height: 20rem;
   border: rem(2) dashed rgba(28, 47, 33, 0.45);
   border-radius: rem(8);
   background:
@@ -563,6 +562,24 @@ body {
     width: 56%;
   }
 
+  &.brovar-slide{
+    width: 13rem;
+    margin-top: 0;
+  }
+
+  &.ohho-slide{
+    margin: 9px auto;
+    width: 18%;
+  }
+
+  &.gator-slide{
+    width: 22rem;
+  }
+
+  &.maentak-slide{
+    width: 13rem;
+  }
+
   &.gator{
     margin: rem(200) 0 rem(102) 0;
     width: 100%;
@@ -793,24 +810,24 @@ body {
 
 .slide-corner-back {
   all: unset;
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 7rem;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: rem(-10);
   transform: translateY(-50%);
   z-index: 8;
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.slide-corner-back::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: #ffffff;
-  -webkit-mask: url("../images/shevron.svg") center / contain no-repeat;
-  mask: url("../images/shevron.svg") center / contain no-repeat;
+.slide-corner-back__icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
   transform: scaleX(-1);
 }
 
@@ -828,11 +845,6 @@ body {
 
 .slide-corner-logo {
   display: none !important;
-}
-
-.swiper-slide[data-id="1"].is-slide-expanded .slide-corner-back::before,
-.swiper-slide[data-id="1"].is-slide-collapsing .slide-corner-back::before {
-  background-color: #00aa5b;
 }
 
 .swiper-pagination {
@@ -884,8 +896,10 @@ body {
 
 .swiper-slide.is-slide-expanded .feature-card-shell {
   --corner-cut: #{rem(118)};
-  width: calc(98% - #{rem(60)});
-  height: 95%;
+  width: 90%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .swiper-slide.is-slide-collapsing .feature-card-shell {
@@ -957,10 +971,10 @@ body {
 
   .description{
     font-weight: 300;
-    font-size: rem(26);
+    font-size: rem(18);
     line-height: 100%;
     margin-top: rem(31);
-    text-align: left;
+    text-align: justify;
   }
 }
 
@@ -994,7 +1008,7 @@ body {
 
   .choice{
     max-width: rem(160);
-    font-size: rem(22);
+    font-size: rem(18);
     color: white;
     width: 100%;
     cursor: pointer;
@@ -1056,14 +1070,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: rem(18);
-  max-height: rem(945);
+  max-height: 70rem;
   overflow-y: auto;
   padding-right: rem(24);
   scrollbar-width: none;
   -ms-overflow-style: none;
 
   &.bot{
-    max-height: 78rem;
+    max-height: 85rem;
 
     .call-button{
       margin-top: 2rem!important;
@@ -1090,8 +1104,7 @@ body {
   }
 
   &.ohho{
-    max-height: 77rem;
-
+    max-height: 80rem;
     .item{
       height: rem(333)!important;
 

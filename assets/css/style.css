@@ -1140,22 +1140,17 @@ body {
 }
 
 .card-detail--ohota .items-list .item {
-  min-height: 18.9375rem;
   height: auto;
 }
 
 .card-detail--ohho .items-list .item {
-  min-height: 18.9375rem;
   height: auto;
 }
 
 .card-detail--gator .items-list .item {
-  min-height: 18.9375rem;
   height: auto;
 }
 
 .card-detail--ohota {
   color: white;
 }
-
-/*# sourceMappingURL=style.css.map */

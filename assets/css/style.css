@@ -1034,9 +1034,6 @@ body {
 .items-list.ohho {
   max-height: 80rem;
 }
-.items-list.ohho .item {
-  height: 23rem !important;
-}
 .items-list.ohho .item .item-content {
   background-color: white !important;
   background: transparent !important;
@@ -1097,6 +1094,7 @@ body {
   font-size: 1.125rem;
   margin-top: 0.6875rem;
   text-align: left;
+  margin-bottom: 2rem;
 }
 .items-list .item .item-content .call-button {
   background: rgba(0, 0, 0, 0.3019607843);
@@ -1156,3 +1154,5 @@ body {
 .card-detail--ohota {
   color: white;
 }
+
+/*# sourceMappingURL=style.css.map */

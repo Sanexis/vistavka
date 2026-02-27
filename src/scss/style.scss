@@ -1124,7 +1124,6 @@ body {
   &.ohho{
     max-height: 80rem;
     .item{
-      height: 23rem!important;
 
       .item-content{
         background-color: white!important;
@@ -1197,6 +1196,7 @@ body {
         font-size: rem(18);
         margin-top: rem(11);
         text-align: left;
+        margin-bottom: 2rem;
       }
 
       .call-button{

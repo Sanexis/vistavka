@@ -1025,7 +1025,6 @@ body {
 }
 .items-list.ohota .item {
   flex-shrink: inherit;
-  min-height: 22rem !important;
 }
 .items-list.ohota .item .call-button {
   margin-top: 2rem;
@@ -1154,3 +1153,5 @@ body {
 .card-detail--ohota {
   color: white;
 }
+
+/*# sourceMappingURL=style.css.map */

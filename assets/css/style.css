@@ -457,8 +457,8 @@ body {
 
 .card-cut-marker {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   pointer-events: none;
   z-index: 4;
 }
@@ -546,7 +546,7 @@ body {
   margin-top: 0;
 }
 .card-logo.ohho-slide {
-  margin: 9px auto;
+  margin: 0.5625rem auto;
   width: 18%;
 }
 .card-logo.gator-slide {
@@ -692,7 +692,7 @@ body {
 .card-detail p {
   margin: 0;
   max-width: 51.25rem;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.35;
   text-align: center;
 }
@@ -1034,6 +1034,9 @@ body {
 .items-list.ohho {
   max-height: 80rem;
 }
+.items-list.ohho .item .more-info {
+  display: none !important;
+}
 .items-list.ohho .item .item-content {
   background-color: white !important;
   background: transparent !important;
@@ -1058,7 +1061,7 @@ body {
 }
 .items-list .item {
   display: flex;
-  height: 18.9375rem;
+  height: auto;
   flex-shrink: 0;
 }
 .items-list .item img {
@@ -1083,6 +1086,7 @@ body {
   font-weight: 500;
   font-size: 1.875rem;
   color: white;
+  text-align: left;
 }
 .items-list .item .item-content .title-block .more-info {
   font-size: 1rem;
